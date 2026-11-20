@@ -1,0 +1,22 @@
+# Default pipeline configuration. Copy and edit for experiments (configs/exp_*.yaml).
+mode: face            # face | body
+input: data/samples   # image, folder of frames, or video file
+output: outputs/default
+
+detection:
+  face_model: retinaface      # retinaface | yolo-face | mediapipe
+  person_model: maskrcnn      # maskrcnn | yolo-seg
+  score_threshold: 0.5
+
+segmentation:
+  model: sam2                 # sam2 | none (use bbox as mask)
+  dilate_px: 8                # grow masks so inpainting covers edges
+
+anonymization:
+  method: gaussian_blur       # gaussian_blur | pixelate | solid | lama | sd_inpaint | propainter
+  blur_kernel: 51
+  pixel_size: 16
+
+video:
+  tracker: sam2               # sam2 | bytetrack
+  temporal_inpainting: false  # true -> ProPainter instead of per-frame inpainting
