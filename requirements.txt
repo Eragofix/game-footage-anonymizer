@@ -1,0 +1,18 @@
+# Core (CPU, enough for the classic baseline and tests)
+numpy>=1.26
+opencv-python>=4.9
+pyyaml>=6.0
+tqdm>=4.66
+
+# Deep learning stack (install the CUDA build of torch for your GPU, see README)
+torch>=2.2
+torchvision>=0.17
+
+# Metrics
+scikit-image>=0.22
+lpips>=0.1.4
+
+# Dev
+pytest>=8.0
+ruff>=0.4
+nbstripout>=0.7

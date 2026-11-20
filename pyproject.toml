@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "game-footage-anonymizer"
+version = "0.1.0"
+description = "Anonymizing sensitive data in game footage: from blurring to face and full-body inpainting in images and video."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Jan Durawa" }, { name = "Wiktoria Jankowska" }]
+dependencies = ["numpy>=1.26", "opencv-python>=4.9", "pyyaml>=6.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
